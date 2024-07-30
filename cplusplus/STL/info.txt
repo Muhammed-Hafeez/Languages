@@ -1,0 +1,54 @@
+The C++ Standard Template Library (STL) consists of several components that facilitate data manipulation and algorithm implementation. Here are the main components of the C++ STL:
+
+Containers: These are used to store collections of data. They provide different data structures for different needs.
+
+Sequence Containers: Allow storage of elements in a linear sequence.
+vector
+deque
+list
+array
+forward_list
+Associative Containers: Store elements formed by a combination of a key value and a mapped value.
+set
+multiset
+map
+multimap
+Unordered Associative Containers: Use hash tables for storage.
+unordered_set
+unordered_multiset
+unordered_map
+unordered_multimap
+Container Adaptors: Provide a different interface for sequential containers.
+stack
+queue
+priority_queue
+Algorithms: These are a collection of functions for performing operations on the elements of containers.
+
+Searching: find, binary_search, search
+Sorting: sort, partial_sort, nth_element
+Modifying: copy, swap, replace, fill
+Numeric: accumulate, inner_product, adjacent_difference, partial_sum
+Iterators: These provide a way to access elements of a container. Iterators are used extensively by the STL algorithms.
+
+Input Iterator
+Output Iterator
+Forward Iterator
+Bidirectional Iterator
+Random Access Iterator
+Functions and Functors: These are objects that can be called as if they are a function.
+
+Function Objects (Functors): Objects that can be used in place of a function.
+Predefined Function Objects: plus, minus, multiplies, divides, modulus, negate, etc.
+Binders: bind1st, bind2nd
+Function Adaptors: ptr_fun, mem_fun, mem_fun_ref
+Lambda Expressions: Provide a concise way to define anonymous function objects.
+Utilities: Provide utility functions and classes.
+
+pair
+tuple
+swap
+move
+forward
+make_pair
+make_tuple
+tie

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassManipullation</title>
+</head>
+
+<body>
+  <div class="newelem" token="elem">hello this new elem</div>
+  <iframe class="i"></iframe>
+  <script>
+    class ClassListMethods {
+      constructor(elem) {
+        this.elem = elem;
+        this.classList = this.elem.classList;
+      }
+      logValue() {
+        console.log(this.elem.classList.value);
+      }
+      add(className) {
+        this.elem.classList.add(className);
+      }
+      contains(className) {
+        return this.elem.classList.contains(className);
+      }
+      length() {
+        return this.elem.classList.length;
+      }
+      entries() {
+        return this.elem.classList.entries();
+      }
+      item(num) {
+        return this.classList.item(num);
+      }
+      keys() {
+        return this.classList.keys();
+      }
+      remove(classString) {
+        this.classList.remove(classString);
+        return true;
+      }
+      replace(elemstring, classString) {
+        this.classList.replace(elemstring, classString);
+        return this.classList.value;
+      }
+      supports(token) {
+        return this.elem.classList.supports(token);
+      }
+      toggle(classString) {
+        this.classList.toggle(classString);
+        return true;
+      }
+      values() {
+        return this.classList.values();
+      }
+    }
+    ((dt) => {
+      //classname and classlist
+      let elem = dt.querySelector(".newelem");
+      console.log(elem.className); //Returns the value of element's class content attribute. Can be set to change it.
+      elem.className = "elem";
+      console.log(elem.classList); //Allows for manipulation of element's class content attribute as a set of whitespace-separated tokens through a DOMTokenList object.
+      const clm = new ClassListMethods(elem);
+      clm.add("hello");
+      console.log(clm.contains("hello"));
+      console.log(clm.length());
+      console.log(clm.entries());
+      clm.logValue();
+      console.log(clm.values());
+      console.log(clm.item(0));
+      console.log(clm.remove("hello"));
+      clm.logValue();
+      clm.replace("elem", "element");
+      console.log(clm.keys());
+      console.log(clm.toggle("elem"));
+      let i = dt.querySelector(".i").sandbox;
+      console.log(i.supports("allow-forms"));
+
+    })(document);
+  </script>
+</body>
+
+</html>

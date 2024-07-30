@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cookies</title>
+</head>
+
+<body>
+  <h1>cookies</h1>
+  <script>
+    var getDaysInMonth = function (month, year) {
+      return new Date(year, month, 0).getDate();
+    };
+    const UpdateDateForward = (forward) => {
+      let date = new Date();
+      let day = date.getDate();
+      date = date.setDate(forward + day);
+      return new Date(date);
+    };
+    ((dt) => {
+      //cookies
+      console.log(dt.cookie);
+      dt.cookie = "use=harry";
+      const date = UpdateDateForward(21);
+      dt.cookie =
+        encodeURIComponent("user") +
+        "=" +
+        encodeURIComponent("hafeez") +
+        `; path=/; expires = ${date};`;
+      console.log(dt.cookie);
+    })(document);
+  </script>
+</body>
+
+</html>

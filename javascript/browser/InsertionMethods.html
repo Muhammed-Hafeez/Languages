@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsertionMethods</title>
+</head>
+
+<body>
+  <h1 class="heading">Insertion Methods in js</h1>
+  <script>
+    class InsertionMethods {
+      createElement(name) {
+        let div = document.createElement(name);
+        return div;
+      }
+      AddClass(name, Element) {
+        Element.className = name;
+        return Element;
+      }
+      place(place, Element, method) {
+        switch (method) {
+          case "append":
+            place.append(Element);
+            break;
+          case "prepend":
+            place.prepend(Element);
+            break;
+          case "before":
+            place.before(Element);
+            break;
+          case "after":
+            place.after(Element);
+            break;
+          case "replace":
+            place.replaceWith(Element);
+            break;
+          default:
+            place.append(Element);
+            break;
+        }
+
+        return Element;
+      }
+      ChangeInnerHTML(Element, text) {
+        Element.innerHTML = text;
+        return Element;
+      }
+    }
+    let h1 = Array.from(document.querySelectorAll(".heading"));
+
+    (function (dt) {
+      const i = new InsertionMethods();
+      let div = i.createElement("div");
+      // i.place(dt.body, div, "prepend");
+      i.ChangeInnerHTML(div, "hello");
+      i.AddClass("one", div);
+      i.place(h1[0], div, "replace");
+    })(document);
+
+    (function (dt) {
+      let div = dt.querySelectorAll(".one")[0];
+      h1[0].removeAttribute("hidden");
+      div.insertAdjacentHTML("beforebegin", h1[0].outerHTML);
+      //after begin
+      //before end
+      //after end
+      //inserting and deleting an element
+      let i = new InsertionMethods();
+      let span = i.createElement("span");
+      i.ChangeInnerHTML(span, "hello after");
+      div.insertAdjacentElement("afterend", span);
+      //removing
+      span.remove();
+    })(document);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The dom properties</title>
+</head>
+
+<body>
+  <h1 hidden class="heading">the Dom properties</h1>
+  <script>
+    (async function (dt) {
+      //other dom properties
+      let heading = Array.from(dt.querySelectorAll(".heading"));
+      console.log(heading[0].tagName);
+      console.log(heading[0].nodeName);
+      console.log(dt.body.innerHTML);
+      console.log(dt.body.outerHTML);
+      console.log(heading[0].textContent);
+      console.log(heading[0].hidden);
+      let time = () => {
+        setTimeout(() => {
+          heading[0].hidden = false;
+        }, 3000);
+      };
+      await time();
+      //attributes methods
+      console.log(heading[0].hasAttribute("hidden"));
+      heading[0].setAttribute("data-unique", true);
+      console.log(heading[0].getAttribute("data-unique"));
+      heading[0].removeAttribute("hidden");
+      console.log(heading[0].attributes);
+      console.log(heading[0].dataset);
+    })(document);
+  </script>
+</body>
+
+</html>

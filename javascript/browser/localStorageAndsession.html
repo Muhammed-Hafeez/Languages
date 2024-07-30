@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <h1>local storage items</h1>
+    <div>for session storage it is same as local storage but info lasts only a session</div>
+    <input type="text" placeholder="Enter your name" class="name">
+    <button class="btn">
+        enter
+    </button>
+    <button class="btn">
+        remove all
+    </button>
+    <button class="btn">
+        remove
+    </button>
+    <button class="btn">
+        clear
+    </button>
+    <div class="data"></div>
+    <script>
+        let btn = Array.from(document.querySelectorAll(".btn"));
+        let nameInput = Array.from(document.querySelectorAll(".name"));
+        let data = Array.from(document.querySelectorAll(".data"));
+
+        let getItem = (element, value) => {
+            let item = localStorage.getItem(value);
+            if (item) {
+                let arr = item.split(/,/g);
+                element.innerHTML = "";
+                arr.map((str) => {
+                    element.insertAdjacentHTML("beforeend", `<li>${str}</li>`)
+                })
+                return arr;
+            }
+            element.innerHTML = "";
+            return "";
+        }
+        let setName = () => {
+            let output = nameInput[0].value;
+            let item = localStorage.getItem("name");
+            if (item == null) {
+                localStorage.setItem("name", output);
+                return [output];
+            }
+            item = item.concat(`,${output}`);
+            localStorage.setItem("name", item);
+            return item;
+        }
+        function removeItem(value) {
+            localStorage.removeItem(value);
+        }
+        btn[0].addEventListener("click", () => {
+            setName()
+            getItem(data[0], "name");
+        });
+        btn[1].addEventListener("click", () => {
+            removeItem("name");
+            data[0].innerHTML = "";
+        });
+        btn[3].addEventListener("click", () => {
+            localStorage.clear();
+            data[0].innerHTML = "";
+        })
+        btn[2].addEventListener("click", () => {
+            let items = getItem(data[0], "name");
+            if (items != "") {
+                items.shift();
+                let str = items.toString();
+                str.replace(/[\]\[]]/g, "");
+                localStorage.setItem("name", str);
+                getItem(data[0], "name");
+            }
+            if (items.length == 0) {
+                console.log('ok');
+                removeItem("name");
+            }
+        })
+        let items = getItem(data[0], "name");
+
+    </script>
+</body>
+
+</html>

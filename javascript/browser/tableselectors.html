@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table Selectors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #000000;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #8d87f6;
+    }
+
+    tr:nth-child(even) {
+      background-color: #8f8cf3;
+    }
+
+    caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>Sample Elegant Table with Borders</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>28</td>
+        <td>Software Engineer</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>34</td>
+        <td>Graphic Designer</td>
+      </tr>
+      <tr>
+        <td>Sam Wilson</td>
+        <td>23</td>
+        <td>Data Analyst</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <script>
+    (function (d) {
+      let table = d.getElementsByTagName("table")[0];
+      console.log(table);
+      const { rows, caption, tHead, tFoot, tBodies } = table;
+      console.table("rows", rows);
+      console.table("caption", caption);
+      console.table("tFoot", tFoot);
+      console.table("tBodies", tBodies);
+      console.table("thead", tHead);
+      const { cells, sectionRowIndex, rowIndex } = rows[0];
+      console.table("cells", [cells, sectionRowIndex, rowIndex]);
+    })(document);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Events</title>
+</head>
+
+<body>
+  <button class="btn">
+    button
+  </button>
+  <button class="btn">
+    alert
+  </button>
+  <button class="btn">
+    prompt
+  </button>
+  <button class="btn">
+    conform
+  </button>
+  <script>
+    let btn = Array.from(document.querySelectorAll(".btn"));
+    btn[1].onclick = () => {
+      alert("hello friends");
+    };
+    document.body.style.height = "100vh";
+    let handleMouseMove = (e) => {
+      btn[0].innerHTML = `${e.pageX} ${e.pageY}`;
+      btn[2].innerHTML = e.type;
+      btn[3].innerHTML = `${e.clientX} ${e.clientY}`;
+    };
+    let removed = false;
+    document.body.addEventListener("mousemove", handleMouseMove);
+
+    btn[0].onclick = () => {
+      if (removed) {
+        document.body.addEventListener("mousemove", handleMouseMove);
+        removed = false;
+      } else {
+        document.body.removeEventListener("mousemove", handleMouseMove);
+        removed = true;
+      }
+    };
+  </script>
+
+</body>
+
+</html>

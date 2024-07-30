@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors 2</title>
+</head>
+
+<body>
+  <script>
+    //element only navigation
+    (async function () {
+      const body = document.body;
+      console.info("element only navigation");
+      console.log(body.previousElementSibling);
+      console.log(body.nextElementSibling);
+      console.log(body.firstElementChild);
+      console.log(body.lastElementChild);
+      console.log(document.getElementById("last"));
+      console.log(document.getElementsByClassName("first"));
+      console.log(document.querySelectorAll(".first"));
+      console.log(document.querySelector(".first"));
+      console.log(Array.from(document.getElementsByTagName("div")));
+    })();
+    //searching in the dom
+
+  </script>
+</body>
+
+</html>

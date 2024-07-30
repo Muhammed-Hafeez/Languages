@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors1</title>
+</head>
+
+<body>
+  <!-- html children example -->
+  <div class="first">
+    first child of the body
+  </div>
+  <div>
+    second
+  </div>
+  <div name="hasbulla">
+    last child of the body
+  </div>
+  <script>
+    //for child.html
+    (function () {
+      console.info("child navigation");
+      const body = document.body;
+      console.log(body.firstChild); //returns the first node of the body
+      console.log(body.lastChild); //returns the last node of the body
+      console.log(body.childNodes); //returns the all children nodes of the body this collection of nodes not an array if we want array we use this
+      let arr = Array.from(body.childNodes).filter((element) => {
+        if (element.nodeType === Node.ELEMENT_NODE) return element;
+      });
+      console.log(arr);
+      //some things are always true
+      console.log(body.childNodes[0] === body.firstChild);
+      console.log(body.childNodes[body.childNodes.length - 1] === body.lastChild);
+      //matches closest containes
+      let elem = Array.from(document.querySelectorAll(".first"));
+      console.log('matches .first ', elem[0].matches(".first"));
+      console.log('closest ancestor ', elem[0].closest("body"));
+      console.log("containes ", elem[0].contains(elem[0].nextElementSibling));
+    })();
+  </script>
+</body>
+
+</html>
