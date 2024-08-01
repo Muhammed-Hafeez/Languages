@@ -1,0 +1,11 @@
+  .container {
+      background-color: lightyellow;
+      padding: 10px;
+  }
+
+  @media screen and (width <=600px) {
+      .container {
+          background-color: rgb(125, 17, 212);
+          padding: 10px;
+      }
+  }

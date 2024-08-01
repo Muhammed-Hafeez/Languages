@@ -1,0 +1,17 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    grid-template-rows: repeat(2, 100px);
+    /* 2 rows */
+    gap: 10px;
+    border: 1px solid black;
+}
+
+.grid-item {
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

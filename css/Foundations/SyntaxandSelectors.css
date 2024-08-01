@@ -1,0 +1,43 @@
+/* Css syntax 
+ selector {
+    property: value;
+}
+Selector: Points to the HTML element you want to style. 
+Property: The property you want to change. 
+Value: The value of the property. */
+
+
+/*
+ Selectors are used to target the HTML elements that you want to style. There are various types of selectors in CSS: 
+ Element Selector 
+ Class Selector
+ ID Selector
+ Attribute Selector
+ Pseudo-classes
+ Pseudo-elements
+ */
+
+/*Element Selector: Selects HTML elements based on the element name. */
+p {
+    color: blue;
+}
+
+/*Class Selector: elects elements with a specific class attribute. In HTML,
+a class is defined with the class attribute.*/
+.elem {
+    color: yellow;
+}
+
+/* ID Selector Selects elements based on the ID attribute. In HTML,
+an ID is defined with the id attribute. IDs must be unique within a page. */
+#unique {
+    color: orange;
+}
+
+/* Attribute Selector Selects elements based on an attribute or attribute value*/
+a[href="https://openai.com"] {
+    color: red;
+}
+
+
+

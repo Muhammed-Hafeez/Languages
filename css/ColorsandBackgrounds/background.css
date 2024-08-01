@@ -1,0 +1,70 @@
+.grid-box {
+    display: grid;
+    grid-template-columns : 1fr 1fr 2fr;
+}
+
+body {
+    background: #000;
+    color: white;
+}
+
+.items {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+}
+
+.items:nth-child(1) {
+    background-color: #1aca9e;
+}
+
+.items:nth-child(2) {
+    background-image: url("./muzan\ jackson.jpg");
+    background-repeat: repeat;
+    /* The default */
+    background-repeat: no-repeat;
+    /* No repetition */
+    background-repeat: repeat-x;
+    /* Repeats horizontally */
+    background-repeat: repeat-y;
+    /* Repeats vertically */
+    background-position: center center;
+    background-position: top right;
+    background-position: 30% 30%;
+    background-size: cover;
+    /* Scales the image to cover the entire element */
+    background-size: contain;
+    /* Scales the image to fit within the element */
+    background-size: 100px 50px;
+    /* Specific width and height */
+    background-size: 100% 100%;
+    /* Stretch the image to fit the element */
+}
+
+.items:nth-child(3) {
+    background-image: linear-gradient(48deg, blue, green);
+}
+
+.items:nth-child(4) {
+    background-image: url("./muzan\ jackson.jpg");
+    border: 2px solid white;
+    box-sizing: border-box;
+    background-origin: padding-box;
+    background-origin: border-box;
+    background-origin: content-box;
+    background-attachment: scroll;
+    /* The default */
+    background-attachment: fixed;
+    /* The background is fixed in the viewport */
+    background-attachment: local;
+    /* The background scrolls with the element's contents */
+}
+
+
+.items:nth-child(5) {
+    /* background shorthand */
+    background: white url("./muzan\ jackson.jpg") no-repeat center center / cover ;
+}
+

@@ -1,0 +1,42 @@
+ul{
+    width: 25%;
+}
+li:nth-of-type(1) {
+    color: red;
+}
+
+li:nth-child(2) {
+    text-align: center;
+}
+
+li:nth-child(3) {
+    text-decoration: line-through;
+}
+
+li:nth-child(4) {
+    text-transform: lowercase;
+}
+
+li:nth-child(5) {
+    text-indent: 50px;
+}
+
+li:nth-child(6) {
+    letter-spacing:10px ;
+}
+
+li:nth-child(7) {
+    word-spacing: 2em;
+}
+
+li:nth-child(8) {
+    line-height: 2.5;
+}
+
+li:nth-child(9) {
+    text-shadow:4rem 0.2rem rgb(166, 107, 224) ;
+}
+
+li:nth-child(10) {
+    white-space:pre-wrap;
+}

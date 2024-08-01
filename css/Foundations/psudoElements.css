@@ -1,0 +1,32 @@
+p::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+
+p:after {
+    content: ":)";
+    font-size: larger;
+    font-weight: bold;
+}
+
+p::first-line {
+    font-size: 1.5em;
+}
+
+p::first-letter {
+    font-size: 3.5rem;
+}
+
+::selection {
+    background: yellow;
+    color: black;
+}
+
+li::marker {
+    color: rebeccapurple;
+    font-size: 1.2em;
+}
+li:hover::before {
+    content: "→ ";
+    color: rebeccapurple;
+}

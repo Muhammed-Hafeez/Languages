@@ -1,0 +1,44 @@
+body {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+div {
+    background: #540099;
+    color: white;
+    margin: 1px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div:nth-child(even) {
+    background: #000;
+}
+
+.content-box:hover {
+    font-size: larger;
+}
+
+.padding-box:hover {
+    padding: 5px;
+}
+
+.margin-box:hover {
+    margin: 5px;
+}
+
+.border-box:hover {
+    border: 2px solid rgb(216, 0, 0);
+}
+
+.box-sizeing {
+    margin: 3px;
+    padding: 8px;
+    border: 2px solid yellow;
+    box-sizing: border-box;
+}
+.box-sizeing:hover{
+    box-sizing: unset;
+}
