@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var items_1 = require("./items");
+var orders_1 = require("./orders");
+var items = new items_1.Items();
+var order = new orders_1.Order(items.list);
+items.setItem("oregano pizza", 122);
+items.setItem("chicken pizza", 50);
+items.setItem("hawaii pizza", 12);
+items.setItem("veggie pizza", 10);
+items.getItems();
+//getting item details
+console.log("item:", items.getItemDetails("oregano pizza"));
+console.log("item:", items.getItemDetails(2));
+order.setOrder("oregano pizza");
+order.setOrder("chicken pizza");
+var res = order.setOrder("veggie pizza");
+res ? order.setOrderComplete(res.id) : "";
+order.getOrders();
+console.log("total cash :", orders_1.Order.cashRegister);
+var addToArray = function (array, item) {
+    array.push(item);
+    return item;
+};
+var userArray = [];
+var ItemArray = [];
+addToArray(userArray, { name: "billa", role: "contributor", id: 12 });
+addToArray(ItemArray, { name: "holy water", price: 200, id: 200 });
+console.log(userArray);
+console.log(ItemArray);
